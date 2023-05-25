@@ -8,7 +8,7 @@ c = conn.cursor()
 
 # Creating the table
 
-c.execute('''CREATE TABLE bookstore(id INTEGER PRIMARY KEY,title TEXT,author TEXT, qty INTEGER)''')
+c.execute('''CREATE TABLE IF NOT EXISTS bookstore(id INTEGER PRIMARY KEY,title TEXT,author TEXT, qty INTEGER)''')
 conn.commit()
 
 # Creating a function to enter new book information, and then also integrating it into the database
