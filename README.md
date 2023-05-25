@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Bookstore-Program
 
 This is a simple Python program that allows you to manage a bookstore using a SQLite database. It provides the functionality to
@@ -54,3 +55,6 @@ This program was created by NoobDev1996. You can find the original repository at
 
 
 
+=======
+# L3T07
+>>>>>>> main
