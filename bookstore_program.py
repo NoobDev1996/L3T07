@@ -8,8 +8,8 @@ c = conn.cursor()
 
 # Creating the table
 
-#c.execute('''CREATE TABLE bookstore(id INTEGER PRIMARY KEY,title TEXT,author TEXT, qty INTEGER)''')
-#conn.commit()
+c.execute('''CREATE TABLE bookstore(id INTEGER PRIMARY KEY,title TEXT,author TEXT, qty INTEGER)''')
+conn.commit()
 
 # Creating a function to enter new book information, and then also integrating it into the database
 
@@ -30,7 +30,10 @@ def update_book():
     qty = int(input("Enter book quantity: "))
     c.execute("UPDATE bookstore SET id=?, title=?, author=? WHERE id=?", (id, title, author, qty))
     conn.commit()
-    print("Book updated successfully!\n")
+    if c.rowcount == 0:
+        print("Book not found")
+    else:
+        print("Book updated successfully!\n")
 
 # Creating a function to delete a books information from the database
 
